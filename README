@@ -1,0 +1,24 @@
+### RabbitMq ###
+RabbitMQ is a widely used open-source message broker written in the Erlang programming language. As a message-oriented middleware, RabbitMQ can be used to implement the Advanced Message Queuing Protocol (AMQP) on all modern operating systems.
+
+# Install
+sudo apt install rabbitmq-server
+
+# Service
+sudo systemctl start rabbitmq-server.service
+sudo systemctl enable rabbitmq-server.service
+
+By default RabbitMQ creates a user named "guest" with password "guest”. 
+
+# Set ACP password
+sudo rabbitmqctl add_user admin password 
+sudo rabbitmqctl set_user_tags admin administrator
+sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+
+Admin page:
+http://localhost:15672/#/
+user: guest
+pass: guest
+
+
+
